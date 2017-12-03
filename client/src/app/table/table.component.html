@@ -10,8 +10,8 @@
     <tbody>
     <tr *ngFor="let rate of rates">
       <td>{{ rate.date | date: 'dd/MM/yyyy'}}</td>
-      <td>{{ rate.usd }}</td>
-      <td>{{ rate.eur }}</td>
+      <td [ngClass]="{greenClass: rate.usd == minUsd, redClass: rate.usd == maxUsd}">{{ rate.usd }}</td>
+      <td [ngClass]="{greenClass: rate.eur == minEur, redClass: rate.eur == maxEur}">{{ rate.eur }}</td>
     </tr>
     </tbody>
   </table>
